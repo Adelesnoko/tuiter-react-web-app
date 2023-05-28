@@ -53,4 +53,5 @@ function Tuiter() {
         </div>
     );
 }
-export default Tuiter
+
+export default Tuiter;
