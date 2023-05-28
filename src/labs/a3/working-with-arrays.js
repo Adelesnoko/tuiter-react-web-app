@@ -2,7 +2,7 @@ import ArrayIndexAndLength from "./array-index-and-length";
 import AddingAndRemovingDataToFromArrays from "./adding-and-removing-data-to-from-arrays";
 import ForLoops from "./for-loops";
 import MapFunction from "./map-function";
-// import JavaScript from "./java-script";
+import JavaScript from "./java-script";
 import JsonStringify from "./json-stringify";
 import FindFunction from "./find-function";
 import FindIndexFunction from "./find-index";
