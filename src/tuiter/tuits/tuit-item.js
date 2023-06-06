@@ -17,7 +17,7 @@ const TuitItem = ({tuit}) =>{
             <li className="list-group-item">
                     <div className="row">
                         <div className="col-1 mt-1">
-                            <img className="rounded-circle" width={50} src={`/images/${tuit.image}`} alt="TuitImage"/>
+                            <img className="rounded-circle" width={50} src={require(`../images/${tuit.image}`)} alt="TuitImage"/>
                         </div>
                         <div className="col-11">
                             <div style={{ display: "flex", alignItems: "center" }}>
