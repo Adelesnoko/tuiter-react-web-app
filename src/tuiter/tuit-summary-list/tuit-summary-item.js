@@ -2,12 +2,12 @@ import React from "react";
 const TuitSummaryItem = (
  {
    tuit = {
-     "topic": "Space",
-     "userName": "SpaceX",
-     "time": "2h",
-     "title": `Tesla CyberTruck lands on Mars and
-               picks up the Curiosity rover on its 6' bed`,
-     "image": "tesla.png"
+        "topic": "Space",
+        "userName": "SpaceX",
+        "time": "2h",
+        "title": `Tesla CyberTruck lands on Mars and
+                picks up the Curiosity rover on its 6' bed`,
+        "image": "tesla.png"
    }
  }
 ) => {

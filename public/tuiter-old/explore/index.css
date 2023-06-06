@@ -159,29 +159,7 @@
     display:flex;
 }
 
-/* .wd-nav-link {
-    border: 1px solid lightgrey;
-    border-bottom: none;
-    background: white;
-    border-radius: 0.5rem 0.5rem 0 0;
+.click-active{
+    color: white;
 }
-
-.wd-nav-tabs {
-    border: none;
-}
-.wd-nav-item {
-    flex-grow: 1;
-}
-.wd-nav-link:not(.active) {
-    border-color: white;
-    border-bottom: 1px solid lightgrey;
-}
-.wd-nav-link.active {
-    font-weight: bold;
-    border-color: lightgrey;
-    border-bottom: 1px solid white;
-    background: white;
-} */
-
-
   
