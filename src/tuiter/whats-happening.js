@@ -1,7 +1,8 @@
 import React, {useState} from "react";
 import {AiOutlinePicture, AiOutlineFileGif, AiOutlineSmile, AiOutlineCalendar, AiOutlineBold, AiOutlineItalic} from "react-icons/ai";
 import {HiOutlineChartBar, HiOutlineLocationMarker} from "react-icons/hi";
-import {createTuit} from "./reducers/tuits-reducer";
+// import {createTuit} from "./reducers/tuits-reducer";
+import {createTuitThunk} from "./services/tuits-thunks";
 import {useDispatch} from "react-redux";
 
 const WhatsHappening = () => {
@@ -12,11 +13,11 @@ const WhatsHappening = () => {
             // Display the prompt when the tuit content is blank
             alert("Please add your content. Cannot tuit blank.");
           } else {
-        const newTuit = {
-            tuit: whatsHappening
-          }
-          dispatch(createTuit(newTuit));
-          setWhatsHappening("");
+            const newTuit = {
+                tuit: whatsHappening
+            }
+            dispatch(createTuitThunk(newTuit));
+            setWhatsHappening("");
         }
     };
     return (
