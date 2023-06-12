@@ -13,17 +13,20 @@ export const profileThunk = createAsyncThunk(
         return await authService.profile();
     }
 );
+
 export const logoutThunk = createAsyncThunk(
     "auth/logout", async () => {
         return await authService.logout();
    }
 );
+
 export const updateUserThunk = createAsyncThunk(
     "user/updateUser", async (user) => {
         await authService.updateUser(user);
         return user;
    }
 );
+
 export const registrationThunk = createAsyncThunk(
     "auth/register", async (credentials) => {
         const user = await authService.register(credentials);
