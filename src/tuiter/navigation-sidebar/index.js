@@ -7,7 +7,7 @@ import {GiArchiveRegister} from "react-icons/gi";
 
 const NavigationSidebar = () => {
     const { pathname } = useLocation();
-    const [active] = pathname.split("/");
+    const [ignore, tuiter,active] = pathname.split("/");
     const links = [
         { name: "home", icon: <AiFillHome /> },
         { name: "explore", icon: <FaHashtag />  },
@@ -34,7 +34,7 @@ const NavigationSidebar = () => {
                         <span className="d-sm-none d-lg-block">{link.name}</span>
                     </div>
                 </Link>
-            )}
+            )} 
             {!currentUser && 
                 <Link 
                     className={`list-group-item text-capitalize ${active === "Login" ? "active" : ""}`} 
@@ -43,7 +43,8 @@ const NavigationSidebar = () => {
                         <span className="me-2"><AiOutlineLogin /></span>
                         <span className="d-sm-none d-lg-block">Login</span>
                     </div>  
-                </Link>}
+                </Link>
+            }
             {!currentUser && 
                 <Link 
                     className={`list-group-item text-capitalize ${active === "Register" ? "active" : ""}`} 
@@ -52,7 +53,8 @@ const NavigationSidebar = () => {
                         <span className="me-2"><GiArchiveRegister /></span>
                         <span className="d-sm-none d-lg-block">Register</span>
                     </div>
-                </Link>}
+                </Link>
+            }
             { currentUser && 
                 <Link 
                     className={`list-group-item text-capitalize ${active === "Profile" ? "active" : ""}`} 
@@ -61,9 +63,9 @@ const NavigationSidebar = () => {
                         <span className="me-2"><AiOutlineUser /></span>
                         <span className="d-sm-none d-lg-block">Profile</span>
                     </div>
-                        
-                </Link>}
-        </div> 
+                </Link>
+            }
+        </div>
     );
     
 };
