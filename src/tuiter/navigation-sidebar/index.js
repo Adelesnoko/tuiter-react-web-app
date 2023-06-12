@@ -24,36 +24,6 @@ const NavigationSidebar = () => {
     
     return (
         <div className="list-group">
-            {!currentUser && 
-                <Link 
-                    className={`list-group-item ${active === "login" ? "active" : ""}` }
-                    to="/tuiter/login">
-                    <div className="d-flex align-items-center">
-                        <span className="me-2"><AiOutlineLogin /></span>
-                        <span className="icon-text">Login</span>
-                    </div>  
-                </Link>
-            }
-            {!currentUser && 
-                <Link 
-                className={`list-group-item ${active === "register" ? "active" : ""}` }
-                    to="/tuiter/register">
-                    <div className="d-flex align-items-center">
-                        <span className="me-2"><GiArchiveRegister /></span>
-                        <span className="icon-text">Register</span>
-                    </div>
-                </Link>
-            }
-            { currentUser && 
-                <Link 
-                className={`list-group-item ${active === "profile" ? "active" : ""}` }
-                    to="/tuiter/profile">
-                    <div className="d-flex align-items-center">
-                        <span className="me-2"><AiOutlineUser /></span>
-                        <span className="icon-text">Profile</span>
-                    </div>
-                </Link>
-            }
             {links.map((link) => 
                 <Link 
                     key={link.name}
@@ -61,13 +31,40 @@ const NavigationSidebar = () => {
                     className={`list-group-item text-capitalize ${active === link.name ? "active" : ""}`}>
                     <div className="d-flex align-items-center">
                         <span className="me-2">{link.icon}</span>
-                        {/* <FontAwesomeIcon icon={link.icon} className="me-2" /> */}
                         <span className="d-sm-none d-lg-block">{link.name}</span>
                     </div>
                 </Link>
             )}
-        </div>
-        
+            {!currentUser && 
+                <Link 
+                    className={`list-group-item text-capitalize ${active === "Login" ? "active" : ""}`} 
+                    to="/tuiter/login">
+                    <div className="d-flex align-items-center">
+                        <span className="me-2"><AiOutlineLogin /></span>
+                        <span className="d-sm-none d-lg-block">Login</span>
+                    </div>  
+                </Link>}
+            {!currentUser && 
+                <Link 
+                    className={`list-group-item text-capitalize ${active === "Register" ? "active" : ""}`} 
+                    to="/tuiter/register">
+                    <div className="d-flex align-items-center">
+                        <span className="me-2"><GiArchiveRegister /></span>
+                        <span className="d-sm-none d-lg-block">Register</span>
+                    </div>
+                </Link>}
+            { currentUser && 
+                <Link 
+                    className={`list-group-item text-capitalize ${active === "Profile" ? "active" : ""}`} 
+                    to="/tuiter/register">
+                    <div className="d-flex align-items-center">
+                        <span className="me-2"><AiOutlineUser /></span>
+                        <span className="d-sm-none d-lg-block">Profile</span>
+                    </div>
+                        
+                </Link>}
+        </div> 
     );
+    
 };
 export default NavigationSidebar;

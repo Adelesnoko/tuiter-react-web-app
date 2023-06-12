@@ -34,6 +34,7 @@ function ProfileScreen() {
                     <label>First Name</label>
                     <input 
                         type="text" 
+                        className="mt-2"
                         value={profile.firstName}
                         onChange={(event) => {
                             const newProfile = {
@@ -47,6 +48,7 @@ function ProfileScreen() {
                     <label>Last Name</label>
                     <input 
                         type="text" 
+                        className="mt-2"
                         value={profile.lastName}
                         onChange={(event) => {
                             const newProfile = {
@@ -59,12 +61,16 @@ function ProfileScreen() {
                 </div>
             )}
             <button
+                className="btn btn-danger ms-2 mt-2"
                 onClick={() => {
                 dispatch(logoutThunk());
-                navigate("/login");}}>                   
+                navigate("/tuiter/login");}}>                   
                 Logout
             </button>
-            <button onClick={save}>Save  </button>
+            <button 
+                className="btn btn-primary ms-2 mt-2"
+                onClick={save}>Save  
+            </button>
         </div>
     );
 }

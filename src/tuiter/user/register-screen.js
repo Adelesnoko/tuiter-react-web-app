@@ -10,7 +10,7 @@ function RegisterScreen() {
     const handleLogin = async () => {
         try {
             dispatch(registrationThunk({ username, password }));
-            navigate("./profile-screen.js");
+            navigate("/tuiter/profile");
         } catch (e) {
             alert(e);
         }
