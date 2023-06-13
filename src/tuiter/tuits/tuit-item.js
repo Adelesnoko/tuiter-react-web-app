@@ -13,6 +13,7 @@ const TuitItem = ({tuit}) =>{
     const deleteTuitHandler = (id) => {
         dispatch(deleteTuitThunk(id));
     }
+    
     return(
         <>
             <li className="list-group-item">
