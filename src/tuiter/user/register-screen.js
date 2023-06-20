@@ -7,29 +7,30 @@ function RegisterScreen() {
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
     const dispatch = useDispatch();
-    const handleLogin = async () => {
+    const handleRegister = async () => {
         try {
-            dispatch(registrationThunk({ username, password }));
+            await dispatch(registrationThunk({ username, password }));
             navigate("/tuiter/profile");
-        } catch (e) {
-            alert(e);
+        } catch (error) {
+            console.error(error);
         }
     };
     return (
         <div>
-            <h1>Register Screen</h1>
+            <h1>Register</h1>
             <div className="mt-2">
                 <label>Username</label>
-                <input className="form-control" type="text" value={username}
+                <input className="form-control" type="text" placeholder="Username" value={username}
                 onChange={(event) => setUsername(event.target.value)}/>
             </div>
             <div className="mt-2">
                 <label>Password</label>
-                <input className="form-control" type="password" value={password}
+                <input className="form-control" type="password" placeholder="Password" value={password}
                 onChange={(event) => setPassword(event.target.value)}/>
             </div>
+            
             <button className="btn btn-primary mt-2"
-                    onClick={handleLogin}>
+                    onClick={handleRegister}>
                 Register
             </button>
         </div>
