@@ -7,25 +7,32 @@ import axios from 'axios';
 const API_BASE = process.env.REACT_APP_API_BASE;
 const TUITS_API = `${API_BASE}/tuits`;
 
+const request = axios.create({
+    withCredentials: true,
+});
+
 export const createTuit = async (tuit) => {
-    const response = await axios.post(TUITS_API, tuit)
+    const response = await request.post(TUITS_API, tuit)
     return response.data;
 }
 
 export const findTuits  = async ()     => {
-    console.log("find tuits: ", TUITS_API);
-    const response = await axios.get(TUITS_API);
-    const tuits = response.data;
-    return tuits;
+    const response = await request.get(TUITS_API);
+    return response.data;
 }
 
+export const findMyTuits = async () => {
+    const response = await request.get(`${TUITS_API}/my-tuits`);
+    return response.data;
+};
+
 export const deleteTuit = async (tid) => {
-    const response = await axios.delete(`${TUITS_API}/${tid}`);
+    const response = await request.delete(`${TUITS_API}/${tid}`);
     return response.data;
 }
 
 export const updateTuit = async (tuit) => {
-    const response = await axios.put(`${TUITS_API}/${tuit._id}`, tuit);
+    const response = await request.put(`${TUITS_API}/${tuit._id}`, tuit);
     // return tuit;
     return response.data;
 }
