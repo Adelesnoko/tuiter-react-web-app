@@ -17,7 +17,7 @@ export const logout = async () => {
 };
 export const getProfile = async () => {
     const response = await request.get(`${USERS_URL}/profile`);
-    return response.data;
+    return response;
 };
 export const getUsers = async () => {
     const response = await request.get(USERS_URL);
