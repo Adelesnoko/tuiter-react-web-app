@@ -58,7 +58,7 @@ const NavigationSidebar = () => {
             { currentUser && 
                 <Link 
                     className={`list-group-item text-capitalize ${active === "Profile" ? "active" : ""}`} 
-                    to="/tuiter/register">
+                    to="/tuiter/profile">
                     <div className="d-flex align-items-center">
                         <span className="me-2"><AiOutlineUser /></span>
                         <span className="d-sm-none d-lg-block">Profile</span>
