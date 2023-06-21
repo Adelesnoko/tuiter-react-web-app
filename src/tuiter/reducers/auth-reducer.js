@@ -7,8 +7,6 @@ import {
     updateUserThunk, 
     registrationThunk} from "../services/auth-thunks";
 
-
-      
 const authSlice = createSlice({
     name: "auth",
     initialState: { 
@@ -18,7 +16,7 @@ const authSlice = createSlice({
         loading: false,
         currentUser: null 
     },
-    reducers: {},
+    // reducers: {},
     extraReducers: {
         [loginThunk.fulfilled]: (state, action) => {
             state.currentUser = action.payload;

@@ -13,7 +13,7 @@ function ProfileScreen() {
     
     const handleLogout = () => {
         dispatch(logoutThunk());
-        navigate("/login");
+        navigate("/tuiter/login");
     };
     
     const handleUpdate = async () => {
@@ -33,7 +33,7 @@ function ProfileScreen() {
                 setProfile(payload);
             } catch (error) {
                 console.error(error);
-                navigate("/login");
+                navigate("/tuiter/login");
             }
         };
         const fetchMyTuits = async () => {
@@ -53,36 +53,31 @@ function ProfileScreen() {
             <h1>Profile</h1>
             {profile && (
                 <div>
-                    <div>
-                        <label>Username</label>
-                        <input className="form-control" value={profile.username} readOnly />
-                        <label>Password</label>
-                        <input
-                            className="form-control"
-                            value={profile.password}
-                            type="password"
-                        />
-                        <label>First Name</label>
-                        <input 
-                            type="text" 
-                            className="mt-2"
-                            value={profile.firstName}
-                            onChange={(e) => 
-                                setProfile({ ...profile, firstName: e.target.value})
-                            }
-                        />
-                    </div>
-                    <div>
-                        <label>Last Name</label>
-                        <input 
-                            type="text" 
-                            className="mt-2"
-                            value={profile.lastName}
-                            onChange={(e) => 
-                                setProfile({ ...profile, lastName: e.target.value })
-                            }
-                        />
-                    </div>
+                    <label>Username</label>
+                    <input className="form-control" value={profile.username} readOnly />
+                    <label>Password</label>
+                    <input
+                        className="form-control"
+                        value={profile.password}
+                        type="password"
+                    />
+                    <label>First Name</label>
+                    <input 
+                        className="form-control"
+                        value={profile.firstName}
+                        onChange={(e) => 
+                            setProfile({ ...profile, firstName: e.target.value})
+                        }
+                    />
+                
+                    <label>Last Name</label>
+                    <input 
+                        className="form-control"
+                        value={profile.lastName}
+                        onChange={(e) => 
+                            setProfile({ ...profile, lastName: e.target.value })
+                        }
+                    />
                     <button 
                         className="btn btn-primary ms-2 mt-2"
                         onClick={handleUpdate}>
@@ -95,7 +90,8 @@ function ProfileScreen() {
                 onClick={handleLogout}>                   
                 Logout
             </button>
-            
+            <hr />
+            <h4>My Tuits</h4>
             <pre>{JSON.stringify(myTuits, null, 2)}</pre>
         </div>
     );
